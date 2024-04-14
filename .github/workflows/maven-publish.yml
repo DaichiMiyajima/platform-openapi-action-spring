@@ -39,7 +39,7 @@ jobs:
 
       - name: Publish to GitHub Packages Apache Maven
         shell: bash
-        run: mvn -DaltDeploymentRepository=github::default::https://maven.pkg.github.com/DaichiMiyajima/platform-openapi-spring-trial/trial01 deploy -s $GITHUB_WORKSPACE/settings.xml
+        run: mvn -f trial01/pom.xml　-DaltDeploymentRepository=github::default::https://maven.pkg.github.com/DaichiMiyajima/platform-openapi-spring-trial deploy -s $GITHUB_WORKSPACE/settings.xml
         env:
           GITHUB_TOKEN: ${{ github.token }}
   
