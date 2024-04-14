@@ -19,6 +19,12 @@ jobs:
           distribution: 'temurin'
           server-id: github # Value of the distributionManagement/repository/id field of the pom.xml
           settings-path: ${{ github.workspace }} # location for the settings.xml file
+      
+      - name: pwd
+        shell: bash
+        run: |
+          pwd
+          ls -al
 
       - name: Build with Maven
         shell: bash
@@ -28,7 +34,7 @@ jobs:
       - name: Publish to GitHub Packages Apache Maven
         shell: bash
         working-directory: trial01
-        run: mvn -DaltDeploymentRepository=github::default::https://maven.pkg.github.com/DaichiMiyajima/platform-openapi-action-spring deploy -s /$GITHUB_WORKSPACE/settings.xml
+        run: mvn -DaltDeploymentRepository=github::default::https://maven.pkg.github.com/DaichiMiyajima/platform-openapi-action-spring deploy -s ../$GITHUB_WORKSPACE/settings.xml
         env:
           GITHUB_TOKEN: ${{ github.token }}
   
