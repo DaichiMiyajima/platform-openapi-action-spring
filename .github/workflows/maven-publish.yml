@@ -35,7 +35,7 @@ jobs:
       - name: Publish to GitHub Packages Apache Maven
         shell: bash
         working-directory: trial01
-        run: mvn -DaltDeploymentRepository=github::default::https://maven.pkg.github.com/DaichiMiyajima/platform-openapi-action-spring deploy -s $HOME/$GITHUB_WORKSPACE/settings.xml
+        run: mvn -DaltDeploymentRepository=github::default::https://maven.pkg.github.com/DaichiMiyajima/platform-openapi-action-spring deploy -s /home/runner/work/platform-openapi-action-spring/platform-openapi-action-spring/settings.xml
         env:
           GITHUB_TOKEN: ${{ github.token }}
   
