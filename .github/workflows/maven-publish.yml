@@ -29,20 +29,12 @@ jobs:
 
       - name: Build with Maven
         shell: bash
-        working-directory: trial01
-        run: mvn -B package --file pom.xml
+        run: |
+          mvn -B package --file trial01/pom.xml
 
       - name: Publish to GitHub Packages Apache Maven
         shell: bash
-        working-directory: trial01
-        run: mvn -DaltDeploymentRepository=github::default::https://maven.pkg.github.com/DaichiMiyajima/platform-openapi-action-spring deploy -s /home/runner/work/platform-openapi-action-spring/platform-openapi-action-spring/settings.xml
+        run: mvn deploy -s $GITHUB_WORKSPACE/settings.xml
         env:
           GITHUB_TOKEN: ${{ github.token }}
   
-  deploy-trial02:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: ./.github/actions/deploy
-        env:
-          SERVICE_NAME: trial02
