@@ -24,17 +24,22 @@ jobs:
         shell: bash
         run: |
           pwd
-          ls -al
-          ls -al $HOME
+          ls trial01 -al
 
       - name: Build with Maven
         shell: bash
         run: |
           mvn -B package --file trial01/pom.xml
+      
+      - name: pwd
+        shell: bash
+        run: |
+          pwd
+          ls trial01 -al
 
       - name: Publish to GitHub Packages Apache Maven
         shell: bash
-        run: mvn deploy -s $GITHUB_WORKSPACE/settings.xml
+        run: mvn -DaltDeploymentRepository=github::default::https://maven.pkg.github.com/DaichiMiyajima/platform-openapi-spring-trial/trial01 deploy -s $GITHUB_WORKSPACE/settings.xml
         env:
           GITHUB_TOKEN: ${{ github.token }}
   
