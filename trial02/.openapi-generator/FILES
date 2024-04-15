@@ -1,7 +1,7 @@
 .openapi-generator-ignore
 README.md
 pom.xml
-src/main/java/com/miyajima/trial/api/ApiUtil.java
-src/main/java/com/miyajima/trial/api/CatsApi.java
-src/main/java/com/miyajima/trial/model/Cat.java
-src/main/java/com/miyajima/trial/model/Error.java
+src/main/java/com/miyajima/trial02/api/ApiUtil.java
+src/main/java/com/miyajima/trial02/api/CatsApi.java
+src/main/java/com/miyajima/trial02/model/Cat.java
+src/main/java/com/miyajima/trial02/model/Error.java
