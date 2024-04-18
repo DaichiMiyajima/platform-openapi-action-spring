@@ -33,7 +33,7 @@ import java.util.Map;
 import java.util.Optional;
 import javax.annotation.Generated;
 
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2024-04-18T12:02:18.861388298Z[Etc/UTC]", comments = "Generator version: 7.6.0-SNAPSHOT")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2024-04-18T20:47:26.049984900Z[Etc/UTC]", comments = "Generator version: 7.6.0-SNAPSHOT")
 @Validated
 @Tag(name = "docs", description = "the docs API")
 public interface DocsApi {

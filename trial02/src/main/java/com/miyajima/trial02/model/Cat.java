@@ -18,7 +18,7 @@ import javax.annotation.Generated;
  * Cat
  */
 
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2024-04-18T12:02:21.683770350Z[Etc/UTC]", comments = "Generator version: 7.6.0-SNAPSHOT")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2024-04-18T20:47:33.782501890Z[Etc/UTC]", comments = "Generator version: 7.6.0-SNAPSHOT")
 public class Cat {
 
   private Long id;
