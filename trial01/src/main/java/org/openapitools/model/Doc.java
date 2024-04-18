@@ -1,4 +1,4 @@
-package com.miyajima.trial02.model;
+package org.openapitools.model;
 
 import java.net.URI;
 import java.util.Objects;
@@ -15,11 +15,11 @@ import java.util.*;
 import javax.annotation.Generated;
 
 /**
- * Cat
+ * Doc
  */
 
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2024-04-18T11:48:43.634184059Z[Etc/UTC]", comments = "Generator version: 7.6.0-SNAPSHOT")
-public class Cat {
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2024-04-18T11:48:40.582081643Z[Etc/UTC]", comments = "Generator version: 7.6.0-SNAPSHOT")
+public class Doc {
 
   private Long id;
 
@@ -27,19 +27,19 @@ public class Cat {
 
   private String tag;
 
-  public Cat() {
+  public Doc() {
     super();
   }
 
   /**
    * Constructor with only required parameters
    */
-  public Cat(Long id, String name) {
+  public Doc(Long id, String name) {
     this.id = id;
     this.name = name;
   }
 
-  public Cat id(Long id) {
+  public Doc id(Long id) {
     this.id = id;
     return this;
   }
@@ -59,7 +59,7 @@ public class Cat {
     this.id = id;
   }
 
-  public Cat name(String name) {
+  public Doc name(String name) {
     this.name = name;
     return this;
   }
@@ -79,7 +79,7 @@ public class Cat {
     this.name = name;
   }
 
-  public Cat tag(String tag) {
+  public Doc tag(String tag) {
     this.tag = tag;
     return this;
   }
@@ -107,10 +107,10 @@ public class Cat {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    Cat cat = (Cat) o;
-    return Objects.equals(this.id, cat.id) &&
-        Objects.equals(this.name, cat.name) &&
-        Objects.equals(this.tag, cat.tag);
+    Doc doc = (Doc) o;
+    return Objects.equals(this.id, doc.id) &&
+        Objects.equals(this.name, doc.name) &&
+        Objects.equals(this.tag, doc.tag);
   }
 
   @Override
@@ -121,7 +121,7 @@ public class Cat {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class Cat {\n");
+    sb.append("class Doc {\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    tag: ").append(toIndentedString(tag)).append("\n");
