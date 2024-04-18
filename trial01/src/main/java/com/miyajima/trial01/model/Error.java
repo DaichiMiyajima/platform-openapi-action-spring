@@ -18,7 +18,7 @@ import javax.annotation.Generated;
  * Error
  */
 
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2024-04-15T21:31:22.396054674Z[Etc/UTC]", comments = "Generator version: 7.5.0-SNAPSHOT")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2024-04-18T12:02:18.861388298Z[Etc/UTC]", comments = "Generator version: 7.6.0-SNAPSHOT")
 public class Error {
 
   private Integer code;

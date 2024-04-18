@@ -33,7 +33,7 @@ import java.util.Map;
 import java.util.Optional;
 import javax.annotation.Generated;
 
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2024-04-18T11:48:43.634184059Z[Etc/UTC]", comments = "Generator version: 7.6.0-SNAPSHOT")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2024-04-18T12:02:21.683770350Z[Etc/UTC]", comments = "Generator version: 7.6.0-SNAPSHOT")
 @Validated
 @Tag(name = "cats", description = "the cats API")
 public interface CatsApi {
