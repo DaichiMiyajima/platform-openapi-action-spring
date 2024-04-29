@@ -7,6 +7,7 @@ package com.miyajima.trial01.api;
 
 import com.miyajima.trial01.model.Doc;
 import com.miyajima.trial01.model.Error;
+import java.util.UUID;
 import io.swagger.v3.oas.annotations.ExternalDocumentation;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
@@ -33,7 +34,7 @@ import java.util.Map;
 import java.util.Optional;
 import javax.annotation.Generated;
 
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2024-04-18T20:47:26.049984900Z[Etc/UTC]", comments = "Generator version: 7.6.0-SNAPSHOT")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2024-04-29T07:01:12.633927789Z[Etc/UTC]", comments = "Generator version: 7.6.0-SNAPSHOT")
 @Validated
 @Tag(name = "docs", description = "the docs API")
 public interface DocsApi {
@@ -41,6 +42,7 @@ public interface DocsApi {
     /**
      * GET /docs : List all docs
      *
+     * @param xRequestId  (required)
      * @param limit How many items to return at one time (max 102) (optional)
      * @return A paged array of docs (status code 200)
      *         or unexpected error (status code 200)
@@ -65,6 +67,7 @@ public interface DocsApi {
     )
     
     ResponseEntity<List<Doc>> listDocs(
+        @NotNull @Parameter(name = "x-request-id", description = "", required = true, in = ParameterIn.HEADER) @RequestHeader(value = "x-request-id", required = true) UUID xRequestId,
         @Parameter(name = "limit", description = "How many items to return at one time (max 102)", in = ParameterIn.QUERY) @Valid @RequestParam(value = "limit", required = false) Integer limit
     );
 
@@ -72,6 +75,7 @@ public interface DocsApi {
     /**
      * GET /docs/{docId} : Info for a specific doc
      *
+     * @param xRequestId  (required)
      * @param docId The id of the doc to retrieve (required)
      * @return Expected response to a valid request (status code 200)
      *         or unexpected error (status code 200)
@@ -96,6 +100,7 @@ public interface DocsApi {
     )
     
     ResponseEntity<Doc> showDocById(
+        @NotNull @Parameter(name = "x-request-id", description = "", required = true, in = ParameterIn.HEADER) @RequestHeader(value = "x-request-id", required = true) UUID xRequestId,
         @Parameter(name = "docId", description = "The id of the doc to retrieve", required = true, in = ParameterIn.PATH) @PathVariable("docId") String docId
     );
 

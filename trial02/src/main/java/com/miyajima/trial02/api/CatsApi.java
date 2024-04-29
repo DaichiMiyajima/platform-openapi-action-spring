@@ -7,6 +7,7 @@ package com.miyajima.trial02.api;
 
 import com.miyajima.trial02.model.Cat;
 import com.miyajima.trial02.model.Error;
+import java.util.UUID;
 import io.swagger.v3.oas.annotations.ExternalDocumentation;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
@@ -33,7 +34,7 @@ import java.util.Map;
 import java.util.Optional;
 import javax.annotation.Generated;
 
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2024-04-18T20:47:33.782501890Z[Etc/UTC]", comments = "Generator version: 7.6.0-SNAPSHOT")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2024-04-29T07:01:14.234957254Z[Etc/UTC]", comments = "Generator version: 7.6.0-SNAPSHOT")
 @Validated
 @Tag(name = "cats", description = "the cats API")
 public interface CatsApi {
@@ -41,6 +42,7 @@ public interface CatsApi {
     /**
      * GET /cats : List all cats
      *
+     * @param xRequestId  (required)
      * @param limit How many items to return at one time (max 102) (optional)
      * @return A paged array of cats (status code 200)
      *         or unexpected error (status code 200)
@@ -65,6 +67,7 @@ public interface CatsApi {
     )
     
     ResponseEntity<List<Cat>> listCats(
+        @NotNull @Parameter(name = "x-request-id", description = "", required = true, in = ParameterIn.HEADER) @RequestHeader(value = "x-request-id", required = true) UUID xRequestId,
         @Parameter(name = "limit", description = "How many items to return at one time (max 102)", in = ParameterIn.QUERY) @Valid @RequestParam(value = "limit", required = false) Integer limit
     );
 
@@ -72,6 +75,7 @@ public interface CatsApi {
     /**
      * GET /cats/{catId} : Info for a specific cat
      *
+     * @param xRequestId  (required)
      * @param catId The id of the cat to retrieve (required)
      * @return Expected response to a valid request (status code 200)
      *         or unexpected error (status code 200)
@@ -96,6 +100,7 @@ public interface CatsApi {
     )
     
     ResponseEntity<Cat> showCatById(
+        @NotNull @Parameter(name = "x-request-id", description = "", required = true, in = ParameterIn.HEADER) @RequestHeader(value = "x-request-id", required = true) UUID xRequestId,
         @Parameter(name = "catId", description = "The id of the cat to retrieve", required = true, in = ParameterIn.PATH) @PathVariable("catId") String catId
     );
 
